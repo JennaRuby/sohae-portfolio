@@ -105,6 +105,14 @@
 .work.static-ai .work-title h3 {font-size:clamp(21px,2.1vw,28px);}
 .static-ai-caption {margin:2px 3px 28px;font-size:12px;color:#555b63;line-height:1.85;word-break:keep-all;max-width:92%;}
 @media(max-width:720px){.work.static-ai .static-ai-visual {padding:12px;}.static-ai-caption {font-size:12px;max-width:100%;}}
+
+/* Portfolio card seam fix — keep the existing layout and imagery intact. */
+.work .showcase-duo { gap:0; overflow:hidden; }
+.work .showcase-duo-cell { border:0; outline:0; box-shadow:none; background:var(--panel-color); isolation:isolate; }
+.work .showcase-duo-cell img { display:block; border:0; outline:0; box-shadow:none; }
+/* Prevent fractional grid-pixel seams from exposing the pale card backdrop. */
+.work .showcase-duo-cell + .showcase-duo-cell { margin-left:-1px; width:calc(100% + 1px); }
+.work .showcase-duo-cell:first-child { width:calc(100% + 1px); }
 </style>
 </head>
 <body>
